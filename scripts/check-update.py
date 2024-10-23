@@ -1,6 +1,7 @@
 from requests import Session
 from re import search
 from json import loads, load, dump
+from os import mkdir, environ
 
 x = Session()
 MAPPING = {
@@ -8,6 +9,11 @@ MAPPING = {
     "x86": "ntDownloadUrl",
     "arm": "ntDownloadARMUrl",
 }
+
+def setOutput(key, value):
+    """Set the output for GitHub Actions."""
+    with open(environ["GITHUB_OUTPUT"], "a") as f:
+        f.write(f"{key}={value}\n")
 
 def determineConfigUrl():
     """Determine the URL of the configuration file."""
@@ -68,7 +74,7 @@ def updateJsonIfNeeded(config):
         data = load(f)
     if version in data:
         print(f"No update - Version {version} already exists.")
-        return
+        return None, None
     print(f"Update detected.")
     info = generateInfo(config)
     if not info:
@@ -76,6 +82,7 @@ def updateJsonIfNeeded(config):
     data[version] = info
     with open("versions.json", "w") as f:
         dump(data, f, indent=4)
+    return version, info
 
 def main():
     url = determineConfigUrl()
@@ -86,7 +93,14 @@ def main():
     if not config:
         raise RuntimeError("Failed to extract JSON content from the configuration URL.")
     print(f"Configuration: {config}")
-    updateJsonIfNeeded(config)
+    version, info = updateJsonIfNeeded(config)
+    if version and info:
+        setOutput("version", version)
+        # Use setOutput to write URLs for each architecture
+        for arch, data in info.items():
+            setOutput(arch, data["url"])
+    else:
+        setOutput("version", "none")
 
 if __name__ == "__main__":
     main()
