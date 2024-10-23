@@ -39,9 +39,9 @@ jobs:
         run: |
           mkdir -p downloads # Create directory `downloads` if not exists
           # Download QQ from URLs specified by `x64`, `x86` and `arm` under directory `downloads`, using default names specified by the URLs
-          wget -P downloads ${{ steps.check-update.outputs.x64 }}
-          wget -P downloads ${{ steps.check-update.outputs.x86 }}
-          wget -P downloads ${{ steps.check-update.outputs.arm }}
+          wget -q -P downloads ${{ steps.check-update.outputs.x64 }}
+          wget -q -P downloads ${{ steps.check-update.outputs.x86 }}
+          wget -q -P downloads ${{ steps.check-update.outputs.arm }}
       - name: Create Release
         # If `version` is not `none`
         if: steps.check-update.outputs.version != 'none'
