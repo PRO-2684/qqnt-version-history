@@ -13,16 +13,26 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
       - name: Setup Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.x'
+          python-version: '3.10'
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r ./scripts/requirements.txt
       - name: Check Update
         id: check-update
-        run: python check-update.py
+        run: python ./scripts/check-update.py
+      - name: Commit Changes
+        # If `version` is not `none`
+        if: steps.check-update.outputs.version != 'none'
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+          git add versions.json
+          git commit -m "Detected QQ update: ${{ steps.check-update.outputs.version }}"
+          git push origin main
+          echo "Successfully pushed changes (QQ updated to ${{ steps.check-update.outputs.version }})"
       - name: Download QQ
         # If `version` is not `none`
         if: steps.check-update.outputs.version != 'none'
