@@ -33,10 +33,9 @@ jobs:
           wget -q -P downloads ${{ steps.check-update.outputs.arm }}
       - name: Install Dependencies
         if: steps.check-update.outputs.version-code != 'none'
-        run: |
-          # Install dependencies for `do-update.py`
-          sudo apt-get install -y pev
+        run: sudo apt-get install -y pev
       - name: Do Update
+        id: do-update
         if: steps.check-update.outputs.version-code != 'none'
         run: python ./scripts/do-update.py
       - name: Commit Changes
@@ -53,6 +52,7 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           body_path: ./release-notes.md
+          name: ${{ steps.do-update.outputs.version }}
           tag_name: ${{ steps.check-update.outputs.version-code }}
           files: |
             downloads/*

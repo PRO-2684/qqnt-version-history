@@ -24,6 +24,12 @@ newData = {arch: {
 } for arch in ARCHITECTURES}
 newData["version"] = args.version
 
+def setOutput(key, value):
+    """Set the output for GitHub Actions."""
+    with open(environ["GITHUB_OUTPUT"], "a") as f:
+        f.write(f"{key}={value}\n")
+        print(f"{key}={value}") # Print the output
+
 def getStat(url, file, directory = "./downloads"):
     """Get and validate the stat of the file at the specified URL."""
     r = x.head(url)
@@ -63,6 +69,7 @@ def getStats():
         info["md5"] = hash
         info["size"] = size
     newData["version"] = getVersion()
+    setOutput("version", newData["version"])
     return True
 
 def updateJson():
@@ -92,6 +99,7 @@ def main():
     if not getStats():
         raise RuntimeError("Failed to get and validate the stats of downloaded files.")
     updateJson()
+    generateReleaseNotes()
 
 if __name__ == "__main__":
     main()
