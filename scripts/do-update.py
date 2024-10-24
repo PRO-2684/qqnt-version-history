@@ -11,10 +11,10 @@ ARCHITECTURES = ["x64", "x86", "arm"]
 
 parser = ArgumentParser()
 # Accept 4 arguments: `version-code`, `x64`, `x86`, and `arm`
-parser.add_argument("version-code", type=str, help="The version code of the QQ installation package.")
-parser.add_argument("x64", type=str, help="The URL of the x64 installation package.")
-parser.add_argument("x86", type=str, help="The URL of the x86 installation package.")
-parser.add_argument("arm", type=str, help="The URL of the ARM installation package.")
+parser.add_argument("--version-code", type=str, help="The version code of the QQ installation package.")
+parser.add_argument("--x64", type=str, help="The URL of the x64 installation package.")
+parser.add_argument("--x86", type=str, help="The URL of the x86 installation package.")
+parser.add_argument("--arm", type=str, help="The URL of the ARM installation package.")
 args = parser.parse_args()
 newData = {arch: {
     "url": getattr(args, arch),
