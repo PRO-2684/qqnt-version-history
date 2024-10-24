@@ -37,7 +37,7 @@ jobs:
       - name: Do Update
         id: do-update
         if: steps.check-update.outputs.version-code != 'none'
-        run: python ./scripts/do-update.py
+        run: python ./scripts/do-update.py --version-code ${{ steps.check-update.outputs.version-code }} --x64 ${{ steps.check-update.outputs.x64 }} --x86 ${{ steps.check-update.outputs.x86 }} --arm ${{ steps.check-update.outputs.arm }}
       - name: Commit Changes
         if: steps.check-update.outputs.version-code != 'none'
         run: |
