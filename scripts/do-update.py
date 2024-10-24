@@ -24,12 +24,6 @@ newData = {arch: {
 } for arch in ARCHITECTURES}
 newData["version"] = args.version
 
-def setOutput(key, value):
-    """Set the output for GitHub Actions."""
-    with open(environ["GITHUB_OUTPUT"], "a") as f:
-        f.write(f"{key}={value}\n")
-        print(f"{key}={value}") # Print the output
-
 def getStat(url, file, directory = "./downloads"):
     """Get and validate the stat of the file at the specified URL."""
     r = x.head(url)
