@@ -1,0 +1,96 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "patternProperties": {
+      "^\\d+\\.\\d+\\.\\d+_\\d+$": {
+        "type": "object",
+        "title": "Version Code",
+        "description": "The version number used in the installer file name and download URL",
+        "properties": {
+          "x64": {
+            "type": "object",
+            "title": "x64",
+            "description": "Information about the x64 installer",
+            "properties": {
+              "url": {
+                "type": "string",
+                "format": "uri",
+                "title": "URL",
+                "description": "The URL to the installer"
+              },
+              "size": {
+                "type": "integer",
+                "title": "Size",
+                "description": "The size of the installer in bytes"
+              },
+              "md5": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{32}$",
+                "title": "MD5",
+                "description": "The MD5 checksum of the installer"
+              }
+            },
+            "required": ["url", "size", "md5"]
+          },
+          "x86": {
+            "type": "object",
+            "title": "x86",
+            "description": "Information about the x86 installer",
+            "properties": {
+              "url": {
+                "type": "string",
+                "format": "uri",
+                "title": "URL",
+                "description": "The URL to the installer"
+              },
+              "size": {
+                "type": "integer",
+                "title": "Size",
+                "description": "The size of the installer in bytes"
+              },
+              "md5": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{32}$",
+                "title": "MD5",
+                "description": "The MD5 checksum of the installer"
+              }
+            },
+            "required": ["url", "size", "md5"]
+          },
+          "arm": {
+            "type": "object",
+            "title": "arm",
+            "description": "Information about the arm installer",
+            "properties": {
+              "url": {
+                "type": "string",
+                "format": "uri",
+                "title": "URL",
+                "description": "The URL to the installer"
+              },
+              "size": {
+                "type": "integer",
+                "title": "Size",
+                "description": "The size of the installer in bytes"
+              },
+              "md5": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{32}$",
+                "title": "MD5",
+                "description": "The MD5 checksum of the installer"
+              }
+            },
+            "required": ["url", "size", "md5"]
+          },
+          "version": {
+            "type": "string",
+            "pattern": "^\\d+\\.\\d+\\.\\d+\\.\\d+$",
+            "title": "Version",
+            "description": "The version number of QQ"
+          }
+        },
+        "required": ["x64", "x86", "arm", "version"]
+      }
+    },
+    "additionalProperties": false
+  }

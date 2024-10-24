@@ -1,0 +1,10 @@
+{
+    "json.schemas": [
+        {
+            "fileMatch": [
+                "/versions.json"
+            ],
+            "url": "/versions.schema.json"
+        }
+    ]
+}
