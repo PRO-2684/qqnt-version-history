@@ -1,7 +1,7 @@
 from requests import Session
 from re import search
-from json import loads, load, dump
-from os import mkdir, environ
+from json import load, loads
+from os import environ
 
 x = Session()
 MAPPING = {
@@ -14,6 +14,7 @@ def setOutput(key, value):
     """Set the output for GitHub Actions."""
     with open(environ["GITHUB_OUTPUT"], "a") as f:
         f.write(f"{key}={value}\n")
+        print(f"{key}={value}") # Print the output
 
 def determineConfigUrl():
     """Determine the URL of the configuration file."""
@@ -37,14 +38,8 @@ def getConfig(url):
         return loads(m.group(1))
     return None
 
-def getSizeAndHash(url):
-    """Get the size and hash of the file at the specified URL."""
-    r = x.head(url)
-    # Using `Content-Length` and `X-COS-META-MD5` headers
-    return int(r.headers.get("Content-Length")) or -1, r.headers.get("X-COS-META-MD5") or "<unknown>"
-
-def getVersion(url):
-    """Extract the version from the URL."""
+def getVersionCode(url):
+    """Extract the version code from the URL. (Not the actual version)"""
     # https://dldir1.qq.com/qqfile/qq/QQNT/Windows/QQ_9.9.15_241009_x86_01.exe
     # Match version code (`9.9.15_241009`)
     regex = r'QQ_(\d+\.\d+\.\d+_\d+)'
@@ -52,37 +47,6 @@ def getVersion(url):
     if m:
         return m.group(1)
     return None
-
-def generateInfo(config):
-    """Generate required information based on the configuration."""
-    urlForTest = config.get(MAPPING["x86"])
-    if not urlForTest:
-        return None
-    info = {}
-    for arch, key in MAPPING.items():
-        url = config.get(key)
-        size, hash = getSizeAndHash(url)
-        info[arch] = {"url": url, "size": size, "md5": hash}
-    return info
-
-def updateJsonIfNeeded(config):
-    """Updates `versions.json` if update detected, appending the new version information."""
-    version = getVersion(config[MAPPING["x86"]])
-    if not version:
-        raise RuntimeError("Failed to extract version from the configuration.")
-    with open("versions.json", "r") as f:
-        data = load(f)
-    if version in data:
-        print(f"No update - Version {version} already exists.")
-        return None, None
-    print(f"Update detected.")
-    info = generateInfo(config)
-    if not info:
-        raise RuntimeError("Failed to generate required information based on the configuration.")
-    data[version] = info
-    with open("versions.json", "w") as f:
-        dump(data, f, indent=4)
-    return version, info
 
 def main():
     url = determineConfigUrl()
@@ -92,15 +56,24 @@ def main():
     config = getConfig(url)
     if not config:
         raise RuntimeError("Failed to extract JSON content from the configuration URL.")
-    print(f"Configuration: {config}")
-    version, info = updateJsonIfNeeded(config)
-    if version and info:
-        setOutput("version", version)
-        # Use setOutput to write URLs for each architecture
-        for arch, data in info.items():
-            setOutput(arch, data["url"])
-    else:
-        setOutput("version", "none")
+    versionCode = getVersionCode(config.get(MAPPING["x86"])) or "none"
+    with open("versions.json", "r") as f:
+        data = load(f)
+    if versionCode in data:
+        print(f"No update - Version code {versionCode} already exists.")
+        setOutput("version-code", "none")
+        return
+    setOutput("version-code", versionCode)
+    if versionCode != "none":
+        for arch, key in MAPPING.items():
+            url = config.get(key)
+            setOutput(arch, url)
+
+    # Output be like:
+    # version-code=9.9.15_241009
+    # x64=https://dldir1.qq.com/qqfile/qq/QQNT/Windows/QQ_9.9.15_241009_x64_01.exe
+    # x86=https://dldir1.qq.com/qqfile/qq/QQNT/Windows/QQ_9.9.15_241009_x86_01.exe
+    # arm=https://dldir1.qq.com/qqfile/qq/QQNT/Windows/QQ_9.9.15_241009_arm64_01.exe
 
 if __name__ == "__main__":
     main()

@@ -23,30 +23,35 @@ jobs:
       - name: Check Update
         id: check-update
         run: python ./scripts/check-update.py
-      - name: Commit Changes
-        # If `version` is not `none`
-        if: steps.check-update.outputs.version != 'none'
-        run: |
-          git config --local user.email "actions@github.com"
-          git config --local user.name "GitHub Actions"
-          git add versions.json
-          git commit -m "Detected QQ update: ${{ steps.check-update.outputs.version }}"
-          git push origin main
-          echo "Successfully pushed changes (QQ updated to ${{ steps.check-update.outputs.version }})"
       - name: Download QQ
-        # If `version` is not `none`
-        if: steps.check-update.outputs.version != 'none'
+        if: steps.check-update.outputs.version-code != 'none'
         run: |
           mkdir -p downloads # Create directory `downloads` if not exists
           # Download QQ from URLs specified by `x64`, `x86` and `arm` under directory `downloads`, using default names specified by the URLs
           wget -q -P downloads ${{ steps.check-update.outputs.x64 }}
           wget -q -P downloads ${{ steps.check-update.outputs.x86 }}
           wget -q -P downloads ${{ steps.check-update.outputs.arm }}
+      - name: Install Dependencies
+        if: steps.check-update.outputs.version-code != 'none'
+        run: |
+          # Install dependencies for `do-update.py`
+          sudo apt-get install -y pev
+      - name: Do Update
+        if: steps.check-update.outputs.version-code != 'none'
+        run: python ./scripts/do-update.py
+      - name: Commit Changes
+        if: steps.check-update.outputs.version-code != 'none'
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+          git add versions.json
+          git commit -m "Detected QQ update: ${{ steps.check-update.outputs.version-code }}"
+          git push origin main
+          echo "Successfully pushed changes (QQ updated to ${{ steps.check-update.outputs.version-code }})"
       - name: Create Release
-        # If `version` is not `none`
-        if: steps.check-update.outputs.version != 'none'
+        if: steps.check-update.outputs.version-code != 'none'
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: ${{ steps.check-update.outputs.version }}
+          tag_name: ${{ steps.check-update.outputs.version-code }}
           files: |
             downloads/*
