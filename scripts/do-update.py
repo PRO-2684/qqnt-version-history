@@ -53,7 +53,7 @@ def getStat(url, file, directory = "./downloads"):
 def getVersion():
     """Determines the version of the QQ installation package."""
     fileName = args.x86.split("/")[-1]
-    output = check_output(f"peres -v {fileName} | grep 'Product Version:' | awk '{{print $3}}'", shell=True)
+    output = check_output(f"peres -v './downloads/{fileName}' | grep 'Product Version:' | awk '{{print $3}}'", shell=True)
     return output.decode("utf-8").strip()
 
 def getStats():
@@ -84,10 +84,12 @@ def generateReleaseNotes():
     """Generate release notes based on the changes."""
     with open("release-notes.md", "w") as f:
         f.write("## Version Info\n")
-        f.write(f"- Version: `{args.version}`\n")
+        f.write(f"- Version: `{newData['version']}`\n")
         f.write(f"- Version code: `{args.version_code}`\n")
         f.write("## Assets\n")
         for arch, info in newData.items():
+            if arch == "version":
+                continue
             f.write(f"- {arch.capitalize()}\n")
             f.write(f"    - Official link: [{info['url'].split('/')[-1]}]({info['url']})\n")
             f.write(f"    - Size: {info['size']} bytes\n")
