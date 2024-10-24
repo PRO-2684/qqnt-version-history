@@ -1,1 +1,20 @@
-{}
+{
+    "9.9.15_241009": {
+        "x64": {
+            "url": "https://dldir1.qq.com/qqfile/qq/QQNT/Windows/QQ_9.9.15_241009_x64_01.exe",
+            "size": 196604360,
+            "md5": "f9b1451718997ee11a1ab748641f29f6"
+        },
+        "x86": {
+            "url": "https://dldir1.qq.com/qqfile/qq/QQNT/Windows/QQ_9.9.15_241009_x86_01.exe",
+            "size": 185176008,
+            "md5": "5aeffcfec5be67e4ac0b1ee9e946f439"
+        },
+        "arm": {
+            "url": "https://dldir1.qq.com/qqfile/qq/QQNT/Windows/QQ_9.9.15_241009_arm64_01.exe",
+            "size": 184885704,
+            "md5": "45091b5f94c2b33a0af50ca74567e138"
+        },
+        "version": "9.9.15.28498"
+    }
+}
