@@ -5,6 +5,7 @@ from os import environ
 from os.path import getsize
 from hashlib import md5
 from argparse import ArgumentParser
+from humanize import naturalsize
 
 x = Session()
 ARCHITECTURES = ["x64", "x86", "arm"]
@@ -87,13 +88,12 @@ def generateReleaseNotes():
         f.write(f"- Version: `{newData['version']}`\n")
         f.write(f"- Version code: `{args.version_code}`\n")
         f.write("## Assets\n")
+        f.write("| Architecture | Official Link | Size | MD5 |\n")
+        f.write("| --- | --- | --- | --- |\n")
         for arch, info in newData.items():
             if arch == "version":
                 continue
-            f.write(f"- {arch.capitalize()}\n")
-            f.write(f"    - Official link: [{info['url'].split('/')[-1]}]({info['url']})\n")
-            f.write(f"    - Size: {info['size']} bytes\n")
-            f.write(f"    - MD5: `{info['md5']}`\n")
+            f.write(f"| {arch} | [{info['url'].split('/')[-1]}]({info['url']}) | {naturalsize(info['size'])} | `{info['md5']}` |\n")
 
 def main():
     if not getStats():
