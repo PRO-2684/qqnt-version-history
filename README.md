@@ -4,6 +4,13 @@ This repo automatically tracks public version history of [QQNT](https://im.qq.co
 
 - For detailed changelogs, visit [this page](https://im.qq.com/pcqq/support.html).
 - For versions prior to `9.9.15.28498`/`9.9.15_241009`, please refer to [this thread](https://bbs.pcbeta.com/forum.php?mod=viewthread&tid=1969561) (Chinese).
+- Also, you may use `winget` to search for specific versions and install QQNT, which is the way I recommend:
+    - To list all available versions: `winget search Tencent.QQ.NT --versions`
+    - To install a specific version: `winget install Tencent.QQ.NT --version <version>`
+    - Related packages
+        - `Tencent.QQ.NT` (QQNT)
+        - `Tencent.WeChat` (WeChat)
+        - `Tencent.WeChat.Universal` (WeChat Test Version)
 
 ## Version & Version Code
 
@@ -40,5 +47,3 @@ This file contains the version history of QQNT since `9.9.15.28498`/`9.9.15_2410
     ...
 }
 ```
-
-
