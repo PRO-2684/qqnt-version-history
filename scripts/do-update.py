@@ -25,9 +25,11 @@ newData = {arch: {
 
 def setOutput(key, value):
     """Set the output for GitHub Actions."""
-    with open(environ["GITHUB_OUTPUT"], "a") as f:
-        f.write(f"{key}={value}\n")
-        print(f"{key}={value}") # Print the output
+    # Check if the environment variable `GITHUB_OUTPUT` is set
+    print(f"{key}={value}")
+    if "GITHUB_OUTPUT" in environ:
+        with open(environ["GITHUB_OUTPUT"], "a") as f:
+            f.write(f"{key}={value}\n")
 
 def getStat(url, file, directory = "./downloads"):
     """Get and validate the stat of the file at the specified URL."""
