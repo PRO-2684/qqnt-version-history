@@ -87,6 +87,7 @@ def generateReleaseNotes():
         f.write("## Version Info\n")
         f.write(f"- Version: `{newData['version']}`\n")
         f.write(f"- Version code: `{args.version_code}`\n")
+        f.write("\n")
         f.write("## Assets\n")
         f.write("| Architecture | Official Link | Size | MD5 |\n")
         f.write("| --- | --- | --- | --- |\n")
