@@ -1,4 +1,6 @@
-# qqnt-version-history
+# QQNT-Version-History
+
+English | [简体中文](README.zh-CN.md) | ![GitHub Release](https://img.shields.io/github/v/release/PRO-2684/qqnt-version-history?display_name=release&logo=tencentqq&color=1EBAFC)
 
 This repo automatically tracks public version history of [QQNT](https://im.qq.com/pcqq/index.shtml).
 
@@ -47,3 +49,8 @@ This file contains the version history of QQNT since `9.9.15.28498`/`9.9.15_2410
     ...
 }
 ```
+
+## Related Projects
+
+- [WeChat4-Version-History](https://github.com/PRO-2684/WeChat4-Version-History): Automatically tracks version history of [WeChat4](https://pc.weixin.qq.com/).
+- [wechat-windows-versions](https://github.com/tom-snow/wechat-windows-versions): Automatically tracks version history of [WeChat3](https://pc.weixin.qq.com/).
