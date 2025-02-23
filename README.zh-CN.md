@@ -4,7 +4,7 @@
 
 此仓库自动跟踪 [QQNT](https://im.qq.com/pcqq/index.shtml) 的公开版本历史。
 
-- 访问 [此页面](https://im.qq.com/pcqq/support.html) 已获取详细的更新日志。
+- 访问 [此页面](https://im.qq.com/pcqq/support.html) 以获取详细的更新日志。
 - 对于 `9.9.15.28498`/`9.9.15_241009` 之前的版本，请参考 [此帖](https://bbs.pcbeta.com/forum.php?mod=viewthread&tid=1969561)。
 - 另外，你也可以使用 `winget` 来搜索并安装特定版本的 QQNT，并且这是我个人推荐的方法：
     - 列举所有版本：`winget search Tencent.QQ.NT --versions`
