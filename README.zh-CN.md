@@ -1,6 +1,6 @@
 # QQNT-Version-History
 
-[English](README.md) | 简体中文 | ![GitHub Release](https://img.shields.io/github/v/release/PRO-2684/qqnt-version-history?display_name=release&logo=tencentqq&color=1EBAFC)
+[English](README.md) | 简体中文 | [![GitHub Release](https://img.shields.io/github/v/release/PRO-2684/qqnt-version-history?display_name=release&logo=tencentqq&color=1EBAFC)](https://github.com/PRO-2684/qqnt-version-history/releases/latest)
 
 此仓库自动跟踪 [QQNT](https://im.qq.com/pcqq/index.shtml) 的公开版本历史。
 

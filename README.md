@@ -1,6 +1,6 @@
 # QQNT-Version-History
 
-English | [简体中文](README.zh-CN.md) | ![GitHub Release](https://img.shields.io/github/v/release/PRO-2684/qqnt-version-history?display_name=release&logo=qq&color=1EBAFC)
+English | [简体中文](README.zh-CN.md) | [![GitHub Release](https://img.shields.io/github/v/release/PRO-2684/qqnt-version-history?display_name=release&logo=qq&color=1EBAFC)](https://github.com/PRO-2684/qqnt-version-history/releases/latest)
 
 This repo automatically tracks public version history of [QQNT](https://im.qq.com/pcqq/index.shtml).
 
