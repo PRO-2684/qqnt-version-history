@@ -178,5 +178,23 @@
             "md5": "ba8598133667e5ced6ef91bfda6a309a"
         },
         "version": "9.9.17.31363"
+    },
+    "9.9.18_250307": {
+        "x64": {
+            "url": "https://dldir1.qq.com/qqfile/qq/QQNT/Windows/QQ_9.9.18_250307_x64_01.exe",
+            "size": 208012744,
+            "md5": "e735296cc137075c777d43d710cc7105"
+        },
+        "x86": {
+            "url": "https://dldir1.qq.com/qqfile/qq/QQNT/Windows/QQ_9.9.18_250307_x86_01.exe",
+            "size": 195945928,
+            "md5": "6b5832594e495ebce6c65415941107ec"
+        },
+        "arm": {
+            "url": "https://dldir1.qq.com/qqfile/qq/QQNT/Windows/QQ_9.9.18_250307_arm64_01.exe",
+            "size": 187684808,
+            "md5": "6185eb8ecfef31a313ed56e2cbd03129"
+        },
+        "version": "9.9.18.32869"
     }
 }
