@@ -2,7 +2,7 @@
 
 [English](README.md) | 简体中文 | [![GitHub Release](https://img.shields.io/github/v/release/PRO-2684/qqnt-version-history?display_name=release&label=QQ&logo=qq&color=1EBAFC)](https://github.com/PRO-2684/qqnt-version-history/releases/latest)
 
-此仓库自动跟踪 [QQNT](https://im.qq.com/pcqq/index.shtml) 的公开版本历史。
+此仓库自动跟踪 [QQNT](https://im.qq.com/pcqq/index.shtml) 的公开版本历史。请前往 [Releases](https://github.com/PRO-2684/qqnt-version-history/releases) 界面查看并下载。
 
 - 访问 [此页面](https://im.qq.com/pcqq/support.html) 以获取详细的更新日志。
 - 对于 `9.9.15.28498`/`9.9.15_241009` 之前的版本，请参考 [此帖](https://bbs.pcbeta.com/forum.php?mod=viewthread&tid=1969561)。
