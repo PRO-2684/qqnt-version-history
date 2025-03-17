@@ -2,7 +2,7 @@
 
 English | [简体中文](README.zh-CN.md) | [![GitHub Release](https://img.shields.io/github/v/release/PRO-2684/qqnt-version-history?display_name=release&label=QQ&logo=qq&color=1EBAFC)](https://github.com/PRO-2684/qqnt-version-history/releases/latest)
 
-This repo automatically tracks public version history of [QQNT](https://im.qq.com/pcqq/index.shtml).
+This repo automatically tracks public version history of [QQNT](https://im.qq.com/pcqq/index.shtml). Kindly navigate to [Releases](https://github.com/PRO-2684/qqnt-version-history/releases) to download them.
 
 - For detailed changelogs, visit [this page](https://im.qq.com/pcqq/support.html).
 - For versions prior to `9.9.15.28498`/`9.9.15_241009`, please refer to [this thread](https://bbs.pcbeta.com/forum.php?mod=viewthread&tid=1969561) (Chinese).
