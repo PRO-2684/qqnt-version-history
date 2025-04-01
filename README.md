@@ -54,3 +54,13 @@ This file contains the version history of QQNT since `9.9.15.28498`/`9.9.15_2410
 
 - [WeChat4-Version-History](https://github.com/PRO-2684/WeChat4-Version-History): Automatically tracks version history of [WeChat4](https://pc.weixin.qq.com/).
 - [wechat-windows-versions](https://github.com/tom-snow/wechat-windows-versions): Automatically tracks version history of [WeChat3](https://pc.weixin.qq.com/).
+
+## Star History
+
+<a href="https://www.star-history.com/#PRO-2684/qqnt-version-history&Date">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=PRO-2684/qqnt-version-history&type=Date&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=PRO-2684/qqnt-version-history&type=Date" />
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=PRO-2684/qqnt-version-history&type=Date" />
+ </picture>
+</a>
