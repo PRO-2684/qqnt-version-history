@@ -63,8 +63,6 @@ You may use [`winget`](https://github.com/microsoft/winget-cli) to search for sp
 
 > These sources are updated manually, and might not be updated in time. However, they contain versions prior to `9.9.15.28498`/`9.9.15_241009`, which acts as complementary to this repo.
 
-For versions prior to `9.9.15.28498`/`9.9.15_241009`, please refer to [this thread](https://bbs.pcbeta.com/forum.php?mod=viewthread&tid=1969561) or its [archive](https://web.archive.org/web/20250314001429/https://bbs.pcbeta.com/forum.php?mod=viewthread&tid=1969561) (Chinese).
-
 - [PC Beta Forum](https://bbs.pcbeta.com/forum.php?mod=viewthread&tid=1969561) | [Archive](https://web.archive.org/web/20250314001429/https://bbs.pcbeta.com/forum.php?mod=viewthread&tid=1969561)
 - [Koishi Unofficial](https://forum.itzdrli.cc/d/9) | [Archive](https://web.archive.org/web/20250526040017/https://forum.itzdrli.cc/d/9)
 
