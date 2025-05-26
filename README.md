@@ -4,17 +4,7 @@ English | [简体中文](README.zh-CN.md) |
 [![GitHub Release](https://img.shields.io/github/v/release/PRO-2684/qqnt-version-history?display_name=release&label=QQ&logo=qq&color=1EBAFC)](https://github.com/PRO-2684/qqnt-version-history/releases/latest)
 [![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/PRO-2684/qqnt-version-history/total?logo=github)](https://github.com/PRO-2684/qqnt-version-history/releases)
 
-This repo automatically tracks public version history of [QQNT](https://im.qq.com/pcqq/index.shtml). Kindly navigate to [Releases](https://github.com/PRO-2684/qqnt-version-history/releases) to download them.
-
-- For detailed changelogs, visit [this page](https://im.qq.com/pcqq/support.html).
-- For versions prior to `9.9.15.28498`/`9.9.15_241009`, please refer to [this thread](https://bbs.pcbeta.com/forum.php?mod=viewthread&tid=1969561) (Chinese).
-- Also, you may use `winget` to search for specific versions and install QQNT, which is the way I recommend:
-    - To list all available versions: `winget search Tencent.QQ.NT --versions`
-    - To install a specific version: `winget install Tencent.QQ.NT --version <version>`
-    - Related packages
-        - `Tencent.QQ.NT` (QQNT)
-        - `Tencent.WeChat` (WeChat)
-        - `Tencent.WeChat.Universal` (WeChat Test Version)
+This repo automatically tracks public version history of [QQNT](https://im.qq.com/pcqq/index.shtml). Kindly navigate to [Releases](https://github.com/PRO-2684/qqnt-version-history/releases) to download them. For detailed changelogs, visit [the official support site](https://im.qq.com/pcqq/support.html). For versions prior to `9.9.15.28498`/`9.9.15_241009`, kindly refer to the [Other Sources](#other-sources) section.
 
 ## Version & Version Code
 
@@ -51,6 +41,27 @@ This file contains the version history of QQNT since `9.9.15.28498`/`9.9.15_2410
     ...
 }
 ```
+
+## Other Sources
+
+### Telegram @QQUpdates
+
+[@QQUpdates](http://t.me/QQUpdates) on Telegram provides VERY comprehensive version history of QQ on ALL platforms. Check that out if you can't find the version you want.
+
+### Winget
+
+You may use [`winget`](https://github.com/microsoft/winget-cli) to search for specific versions and install QQNT, but certain versions might be missing from this source:
+
+- To list all available versions: `winget search Tencent.QQ.NT --versions`
+- To install a specific version: `winget install Tencent.QQ.NT --version <version>`
+- Related packages
+    - `Tencent.QQ.NT` (QQNT)
+    - `Tencent.WeChat` (WeChat)
+    - `Tencent.WeChat.Universal` (WeChat Test Version)
+
+### PC Beta Forum
+
+For versions prior to `9.9.15.28498`/`9.9.15_241009`, please refer to [this thread](https://bbs.pcbeta.com/forum.php?mod=viewthread&tid=1969561) or its [archive](https://web.archive.org/web/20250314001429/https://bbs.pcbeta.com/forum.php?mod=viewthread&tid=1969561) (Chinese).
 
 ## Related Projects
 
