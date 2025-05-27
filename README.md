@@ -4,7 +4,14 @@ English | [简体中文](README.zh-CN.md) |
 [![GitHub Release](https://img.shields.io/github/v/release/PRO-2684/qqnt-version-history?display_name=release&label=QQ&logo=qq&color=1EBAFC)](https://github.com/PRO-2684/qqnt-version-history/releases/latest)
 [![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/PRO-2684/qqnt-version-history/total?logo=github)](https://github.com/PRO-2684/qqnt-version-history/releases)
 
-This repo automatically tracks public version history of [QQNT](https://im.qq.com/pcqq/index.shtml). Kindly navigate to [Releases](https://github.com/PRO-2684/qqnt-version-history/releases) to download them. For detailed changelogs, visit [the official support site](https://im.qq.com/pcqq/support.html). For versions prior to `9.9.15.28498`/`9.9.15_241009`, kindly refer to the [Other Sources](#other-sources) section.
+This repo automatically tracks public version history of [QQNT](https://im.qq.com/pcqq/index.shtml).
+
+## Downloads
+
+- Kindly navigate to [Releases](https://github.com/PRO-2684/qqnt-version-history/releases) to search and **download** tracked versions.
+- The **oldest** version tracked by this repo is [`9.9.15.28498`/`9.9.15_241009`](https://github.com/PRO-2684/qqnt-version-history/releases/tag/9.9.15_241009).
+- For detailed **changelogs**, visit [the official support site](https://im.qq.com/pcqq/support.html).
+- For versions **prior** to `9.9.15.28498`/`9.9.15_241009`, kindly refer to the [Other Sources](#other-sources) section.
 
 ## Version & Version Code
 
