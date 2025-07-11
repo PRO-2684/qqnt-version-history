@@ -20,12 +20,19 @@ def determineConfigUrl():
     """Determine the URL of the configuration file."""
     r = x.get("https://im.qq.com/pcqq/index.shtml")
     r.encoding = r.apparent_encoding
-    # var rainbowConfigUrl = "https://qq-web.cdn-go.cn/im.qq.com_new/f0ba2273/202410222121/windowsDownloadUrl.js?t=1729603316568";
-    regex = r'var rainbowConfigUrl = "(https://qq-web.cdn-go.cn/im.qq.com_new/[^/]+/[^/]+/windowsDownloadUrl.js\?t=\d+)";'
+    # var rainbowConfigUrl = "//cdn-go.cn/qq-web/im.qq.com_new/latest/rainbow/windowsConfig.js";
+    regex = r'var rainbowConfigUrl = "(.+)";'
     m = search(regex, r.text)
     if m:
-        return m.group(1)
-    return None
+        url = m.group(1)
+        if url.startswith("//"):
+            return "https:" + url
+        elif url.startswith("http://") or url.startswith("https://"):
+            return url
+        else:
+            return None
+    else:
+        return None
 
 def getConfig(url):
     """Extract JSON content from the configuration URL."""
