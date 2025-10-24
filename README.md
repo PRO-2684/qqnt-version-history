@@ -64,7 +64,7 @@ You may use [`winget`](https://github.com/microsoft/winget-cli) to search for sp
 - Related packages
     - `Tencent.QQ.NT` (QQNT)
     - `Tencent.WeChat` (WeChat)
-    - `Tencent.WeChat.Universal` (WeChat Test Version)
+    - `Tencent.WeChat.Universal` (WeChat 4)
 
 ### Chinese Forums
 
