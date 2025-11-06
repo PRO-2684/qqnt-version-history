@@ -15,8 +15,8 @@ This repo automatically tracks public version history of [QQNT](https://im.qq.co
 
 ## Version & Version Code
 
-- **Version Code** is the version number used in the installer file name and download URL.
-- **Version** is the version number used in all other places. For example:
+- **Version Code** is the version number used in the installer file name and download URL, and is in the format of `x.x.x_x`.
+- **Version** is the version number used in all other places, and is in the format of `x.x.x.x`. For example:
     - It is displayed in the about page of QQ.
     - It is present in various json files like `package.json`
     - It is used as the name of directory under `resources\app\versions` in the installation directory.
