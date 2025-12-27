@@ -4,7 +4,7 @@
 [![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/PRO-2684/qqnt-version-history/total?logo=github)](https://github.com/PRO-2684/qqnt-version-history/releases)
 
 > [!NOTE]
-> QQ is offering latest version only for China IP, so this repo might not get comprehensive updates. See [config.png](./config.png) for illustration of this problem: the upper half is what I get on my machine in China, while the lower half is what I get on my Azure machine not located in China. You can see that QQ is offering different versions.
+> QQ is offering latest version only for China IP, so this repo might not get comprehensive updates. See [config.png](./config.png) for illustration of this problem: the upper half is what I get on my physical machine in China, while the lower half is what I get on my Azure machine not located in China. You can see that QQ is offering different versions.
 
 This repo automatically tracks public version history of [QQNT](https://im.qq.com/pcqq/index.shtml).
 
